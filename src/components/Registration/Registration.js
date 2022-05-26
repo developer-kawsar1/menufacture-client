@@ -2,6 +2,7 @@ import React from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loader from '../Loader/Loader';
 
 const Registration = () => {   
     const navigate=useNavigate() 
@@ -15,7 +16,7 @@ const Registration = () => {
       ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true}); 
 
       if(loading){
-        return <p>Loading</p>
+        return <Loader/>
     } 
     if(error){
         console.log(error.message);

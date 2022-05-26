@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom'; 
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Loader from '../Loader/Loader';
 
 const Login = () => { 
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);  
@@ -31,7 +32,7 @@ const [
         navigate(from,{replace:true})
     }
     if (loading ) {
-        return <p> Loading ... </p>;
+        return <Loader/>
       } 
     return (
         <div className="px-0   bg-base-200 px-5 sm:px-48 py-8 ">
