@@ -5,7 +5,7 @@ import Review from './Review';
 const Reviews = () => { 
     const [products,setProducts]=useState([])
     useEffect(()=>{
-        fetch('https://enigmatic-lowlands-82160.herokuapp.com/product')
+        fetch('https://vast-plateau-65170.herokuapp.com/reviews')
         .then(res=>res.json())
         .then(data=>setProducts(data))
     },[])
@@ -20,7 +20,7 @@ const Reviews = () => {
             
           <div className='grid container mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center justify-center items-center'>
           {
-                products.slice(0, 6).map(product=><Review key={product._id} product={product} />)
+                products.slice(0, 6).map(review=><Review key={review._id} product={review} />)
             }
           </div>
         </div>
