@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Review = ({product}) => { 
-  let {name,review,ratting}=product  
+  let {name,review,ratting,img}=product  
   const list = [] 
   for(let i=0; i<ratting; i++){
     list.push(i+1)
@@ -13,7 +13,7 @@ const Review = ({product}) => {
         
         <div class="avatar mt-3">
       <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-        <img src="https://api.lorem.space/image/face?hash=3174" />
+        <img src={img} />
       </div>
     </div> 
     <h3 className="text-center font-bold mt-3">{name} </h3>

@@ -1,10 +1,23 @@
 [
-    {
-      "_id": 1,
-      "name": "cpu processor",
-      "des":"A processor (CPU) is the logic circuitry that responds to and processes the basic instructions that drive a computer. The CPU is seen as the main and most crucial integrated circuitry (IC) chip in a computer, as it is responsible for interpreting most of computers commands"
-      
-    },
+  
+{
+  "_id": "628d06a4295cbb2a648f5a4d",
+  "name": "Guangdong manufacture high quality heavy wheels  ",
+  "picture": "https://i.ibb.co/zGNpGnY/weels.jpg",
+  "minimumOrder": 23,
+  "avilable": 72,
+  "price": 381,
+  "description": "Guangdong manufacture high quality heavy duty aluminum core 4 5 6 8 10 inch Rubber caster wheels 7 inch trolley wheel"
+  },
+{
+  "_id": "628d06a4295cbb2a648f5a4d",
+  "name": "350mm ABS Wood Look Racing Car Steering Wheel  ",
+  "picture": "https://i.ibb.co/D8t077S/H20fc52a9440944a6bfadff53e4efe42bw-jpg-Q55.jpg",
+  "minimumOrder": 23,
+  "avilable": 72,
+  "price": 381,
+  "description": "Guangdong manufacture high quality heavy duty aluminum core 4 5 6 8 10 inch Rubber caster wheels 7 inch trolley wheel"
+  },
     {
       "_id": 2,
       "name": "Cosmetic Dentistry",
