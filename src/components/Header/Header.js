@@ -3,12 +3,13 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loader from '../Loader/Loader';
 
 const Header = () => {   
   // const [user]=useAuthState(auth) 
   const [user, loading, error] = useAuthState(auth);
   if(loading){
-    return <p>loading</p>
+    return<Loader/>
   }
   const signOutBtn=()=>{
    
@@ -29,7 +30,7 @@ const Header = () => {
       <ul tabindex="0" className="menu menu-compact pb-8 bg-red-800 dropdown-content mt-3 p-2 shadow  rounded-box w-52">
       <li><Link to="/blog">Blog</Link></li>
         
-        <li><a>Item 3</a></li>  
+        <li><Link to="/my-portfolio">My Portfolio</Link></li>  
     
 
         {
@@ -52,7 +53,8 @@ const Header = () => {
   </div>
   <div className="navbar-end hidden lg:flex">
     <ul className="menu menu-horizontal p-0">
-      <li><Link to="/blog">Blog</Link></li>
+      <li><Link to="/blog">Blog</Link></li> 
+      <li><Link to="/my-portfolio">My Portfolio</Link></li>  
     
       {
           user?.uid ? <>

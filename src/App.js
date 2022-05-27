@@ -13,6 +13,8 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import MyOrders from "./components/Dashboard/MyOrders";
 import AddaReview from "./components/Dashboard/AddaReview";
 import MyProfile from "./components/Dashboard/MyProfile";
+import NotFound from "./components/NotFound/NotFound";
+import MyPortfilio from "./components/MyPortfolio/MyPortfilio";
 
 function App() {
   return (
@@ -48,6 +50,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/blog" element={<Blogs />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="*" element={<NotFound/>} />
+        <Route path="/my-portfolio" element={<MyPortfilio/>} />
       </Routes>
       <Footer />
     </div>
