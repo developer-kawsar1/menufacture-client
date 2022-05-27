@@ -113,40 +113,40 @@ const MyPortfilio = () => {
       <h3 className="text-center text-3xl mt-10 mb-5">My Projects</h3>
       <div className="grid my-10 grid-cols-1 md:grid-cols-2 gap-5">
       <div class="card card-compact  bg-base-100 shadow-xl">
-  <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
+  <figure><img src="https://i.ibb.co/2tXB6x5/english-with-kawsar-web-app-1024x768desktop-3889a4-1.png" alt="Shoes" /></figure>
   <div class="card-body">
     <h2 class="card-title">Learn with kawsar</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
+    {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
     <div class="card-actions justify-end">
       <button class="btn btn-primary"><a href="https://english-with-kawsar.web.app/">Visit</a></button>
     </div>
   </div>
 </div> 
 <div class="card card-compact  bg-base-100 shadow-xl">
-  <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
+  <figure><img src="https://i.ibb.co/WD5LKb6/assignment-final-ad2ba-web-app-1024x768desktop-76b50f.jpg" alt="Shoes" /></figure>
   <div class="card-body">
     <h2 class="card-title">Grab Tools</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
+    {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
     <div class="card-actions justify-end">
       <button class="btn btn-primary"><a href="https://assignment-final-ad2ba.web.app/">Visit</a></button>
     </div>
   </div>
 </div><div class="card card-compact  bg-base-100 shadow-xl">
-  <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
+  <figure><img src="https://i.ibb.co/GtT53Hq/mern-dda0e-firebaseapp-com-1024x768desktop-34f156.jpg" alt="Shoes" /></figure>
   <div class="card-body">
-    <h2 class="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <h2 class="card-title">Grab grocers</h2>
+    {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
     <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+    <button class="btn btn-primary"><a href="https://mern-dda0e.web.app/">Visit</a></button>
     </div>
   </div>
 </div><div class="card card-compact  bg-base-100 shadow-xl">
-  <figure><img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" /></figure>
+  <figure><img src="https://i.ibb.co/D16rkWf/convention-cente-kawsar-netlify-app-1024x768desktop-2df1a0.jpg" alt="Shoes" /></figure>
   <div class="card-body">
-    <h2 class="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <h2 class="card-title">Convention center</h2>
+    {/* <p>If a dog chews shoes whose shoes does he choose?</p> */}
     <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+    <button class="btn btn-primary"><a href="https://mern-dda0e.web.app/">Visit</a></button>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@ const Reviews = () => {
         .then(data=>setProducts(data))
     },[])
     return (
-        <div class="review-container p-8 bg-black bg-opacity-60">
+        <div class="review-container p-8   bg-gray-700">
            
            <div className='mt-4'>
         <h1 className="text-center text-3xl md:text-5xl py-3 -mb-4 text-white ">What Our customer says</h1> 
