@@ -1,7 +1,12 @@
 import React from 'react';
 
 const Review = ({product}) => { 
-  const {name,review,ratting}=product
+  let {name,review,ratting}=product  
+  const list = [] 
+  for(let i=0; i<ratting; i++){
+    list.push(i+1)
+  } 
+  console.log(list);
     return (
         <div class="review flex items-center flex-col py-5 p-2 rounded bg-white mb-8  ">
     
@@ -14,16 +19,15 @@ const Review = ({product}) => {
     <h3 className="text-center font-bold mt-3">{name} </h3>
     <div class="mt-3 px-4 text-center">
       <p> {review}.</p>
-      
+        
     </div>
     <div>
       <div class="rating"> 
-    
-      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
-      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-      <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
+      
+   {
+    list.map(i=><i className='fa fa-star'></i>)
+   }
+       
     </div>
     </div>
     
