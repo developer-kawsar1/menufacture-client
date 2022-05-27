@@ -1,6 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useParams } from 'react-router-dom';
+import auth from '../../firebase.init';
 
-const Purchase = () => {
+const Purchase = () => {  
+    const [product,setProduct]=useState({}) 
+    const {id}=useParams() 
+    useEffect(()=>{
+        const url=`https://vast-plateau-65170.herokuapp.com/product/${id}`  ; 
+        
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>{
+            setProduct(data)  
+            console.log();
+          
+       
+            
+        })
+    },[]) 
+    const [user, loading, error] = useAuthState(auth);
     return (
         <div>
         <div class="px-8 pt-10 min-h-screen bg-base-200">
@@ -8,12 +27,12 @@ const Purchase = () => {
     
     <div class="card  w-full max-w-sm shadow-2xl bg-base-100 bg-white">
       <div class="card-body flex  items-center justify-center">
-                
+                <h3>You are goung to buy {product.name} </h3>
         <div class="form-control w-full">
           <label class="label">
             <span class="label-text">Name</span>
           </label>
-          <input type="text" placeholder="Name" class="input input-bordered" />
+          <input type="text" placeholder="Name" class="input input-bordered" disabled  value={user?.displayName || ''} />
 
         </div>
         
@@ -21,7 +40,7 @@ const Purchase = () => {
           <label class="label">
             <span class="label-text">Email</span>
           </label>
-          <input type="text" placeholder="email" class="input input-bordered" />
+          <input type="text" placeholder="email" class="input input-bordered" disabled value={user?.email || ''} />
         </div>
         
         <div class="form-control w-full">
@@ -37,6 +56,13 @@ const Purchase = () => {
             <span class="label-text">Address</span>
           </label>
           <input type="text" placeholder="Address" class="input input-bordered" />
+
+        </div>
+        <div class="form-control w-full">
+          <label class="label">
+            <span class="label-text">Order quantity</span>
+          </label>
+          <input type="text" placeholder="order quantity" value={product.minimumOrder} class="input input-bordered" />
 
         </div>
         
