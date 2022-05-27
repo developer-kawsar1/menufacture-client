@@ -27,7 +27,7 @@ const [
     const navigate=useNavigate() 
     const location=useLocation() 
     const from=location.state?.from?.pathname || '/' 
-    if(user  ){
+    if(user ||emailuser ){
         // alert("user")
         navigate(from,{replace:true})
     }

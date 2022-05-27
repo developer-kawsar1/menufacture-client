@@ -1,3 +1,5 @@
+import { updateProfile } from 'firebase/auth';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import React from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -14,6 +16,7 @@ const Registration = () => {
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true}); 
+      const [updateProfile, updating, error3] = useUpdateProfile(auth);
 
       if(loading){
         return <Loader/>
@@ -23,16 +26,18 @@ const Registration = () => {
     }  
     if(user  ){
         // alert("user")
-        navigate('/')
+        navigate('/') 
+        console.log();
     }
 
     const subRegForm=async (e)=>{  
         const email= e.target.email.value
          const name=e.target.name.value 
         const password=e.target.password.value 
-  console.log(email,password);
+       console.log(email,password,name);
         e.preventDefault() 
         await   createUserWithEmailAndPassword(email,password) 
+        await updateProfile({ displayName:name }); 
      
     } 
     return (

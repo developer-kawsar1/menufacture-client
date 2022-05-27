@@ -22,12 +22,13 @@ const Purchase = () => {
     const [user, loading, error] = useAuthState(auth);
     return (
         <div>
-        <div class="px-8 pt-10 min-h-screen bg-base-200">
+        <div class="px-8 pt-10 pb-10 min-h-screen bg-base-200">
   <div class="flex justify-center">
     
-    <div class="card  w-full max-w-sm shadow-2xl bg-base-100 bg-white">
+    <div class="card  w-full max-w-sm shadow-2xl bg-base-100 bg-white"> 
+    <h1 className='mt-5 text-gray-600 text-3xl md:text-4xl'>Purchase page</h1>
       <div class="card-body flex  items-center justify-center">
-                <h3>You are goung to buy {product.name} </h3>
+                <h3>You are goung to buy  <span className='text-primary  font-bold'>{product.name}</span> </h3>
         <div class="form-control w-full">
           <label class="label">
             <span class="label-text">Name</span>

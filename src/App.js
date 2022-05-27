@@ -9,6 +9,10 @@ import Registration from "./components/Registration/Registration";
 import Blogs from "./components/Blogs/Blogs";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 import Purchase from "./components/Purchase/Purchase";
+import Dashboard from "./components/Dashboard/Dashboard";
+import MyOrders from "./components/Dashboard/MyOrders";
+import AddaReview from "./components/Dashboard/AddaReview";
+import MyProfile from "./components/Dashboard/MyProfile";
 
 function App() {
   return (
@@ -25,6 +29,21 @@ function App() {
               </RequireAuth>
             }
           ></Route>
+      <Route
+            path="/dashboard"
+            element={
+              <RequireAuth>
+             <Dashboard/>
+              </RequireAuth>
+            }
+          >
+
+          <Route path="myorders" element={<MyOrders />} />
+          <Route path="add-review" element={<AddaReview />} />
+          <Route path="profile" element={<MyProfile />} />
+
+
+          </Route>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/blog" element={<Blogs />} />
