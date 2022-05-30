@@ -92,12 +92,12 @@ const AddProduct = () => {
                 </div>
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Order quantity</span>
+                    <span class="label-text">Avilable products</span>
                   </label>
                   <input
                     type="number"
                     name="quantity"
-                    placeholder="Products quantity"
+                    placeholder="Products Avialable"
                     // defaultValue={product.minimumOrder || ""}
                     class="input input-bordered"
                   />
