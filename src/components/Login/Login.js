@@ -2,7 +2,10 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom'; 
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import Loader from '../Loader/Loader';
+import Loader from '../Loader/Loader'; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import useTokem from '../../Hooks/useToken';
 
 const Login = () => { 
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);  
@@ -14,26 +17,32 @@ const [
     emailerror,
   ] = useSignInWithEmailAndPassword(auth);
     const googleSignIn=()=>{
-        signInWithGoogle()
+        signInWithGoogle() 
     }  
     
     const submitForm=(e)=>{ 
         e.preventDefault()
         const email=e.target.loginemail.value 
         const password=e.target.loginpass.value 
-        console.log(email,password);
-        signInWithEmailAndPassword(email,password)
-    }
+        // console.log(email,password);
+        signInWithEmailAndPassword(email,password) 
+        if(emailerror){
+          toast(emailerror.message);
+          }
+    } 
+    const [token]=useTokem(user||emailuser)
     const navigate=useNavigate() 
     const location=useLocation() 
     const from=location.state?.from?.pathname || '/' 
-    if(user ||emailuser ){
-        // alert("user")
-        navigate(from,{replace:true})
+    if(token){
+        // alert("user") 
+        toast("succefully loged");
+        navigate(from,{replace:true}) 
     }
     if (loading ) {
         return <Loader/>
       } 
+      
     return (
         <div className="px-0   bg-base-200 px-5 sm:px-48 py-8 ">
         <div className="">
@@ -67,7 +76,8 @@ const [
                <div className="form-control mt-6">
                  <button className="btn text-black btn-outline flex justify-center px-8 "  onClick={googleSignIn}>
                    <img src="https://upload.wikimedia.org/wikipedia/commons/archive/5/53/20210313114223%21Google_%22G%22_Logo.svg" alt="" width="30" />
-                   <span className='ml-3'>SignIn With Google</span></button>
+                   <span className='ml-3'>SignIn With Google</span></button> 
+                   <ToastContainer />
                </div>
             </div>
           </div>

@@ -14,7 +14,7 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);
-        console.log();
+        // console.log();
         // setInputsValues(product.minimumOrder)
       });
   }, []);

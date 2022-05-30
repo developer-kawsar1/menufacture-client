@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import auth from '../../firebase.init';
 import useOrders from '../../Hooks/useOrders';
 
 const MyOrders = () => { 
-    const user=useAuthState(auth)  
-    
+    const user=useAuthState(auth)   
+    console.log(user[0].email);
+
     const email=user[0]?.email 
-    const [orders,setOrders]=useOrders()  
-    const myOrders=orders.filter(order=>order.email ===email) 
+    const [orders,setOrders]=useOrders()   
+    const myOrders=orders.filter(order=>order.email ===email)  
+   
+ 
     return (
         <div>
          
@@ -43,7 +46,8 @@ const MyOrders = () => {
             
             )
       }
-     
+        
+       
 
     </tbody>
   </table>

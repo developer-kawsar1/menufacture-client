@@ -1,12 +1,17 @@
 import { updateProfile } from 'firebase/auth';
-import { useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import React from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loader from '../Loader/Loader';
+import useTokem from '../../Hooks/useToken';
 
-const Registration = () => {   
+const Registration = () => {    
+
+  const googleSignIn=()=>{
+    signInWithGoogle() 
+} 
     const navigate=useNavigate() 
     const location=useLocation()  
     const from=location.state?.from?.pathname || '/' 
@@ -15,19 +20,21 @@ const Registration = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true}); 
+      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});  
+      const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);  
       const [updateProfile, updating, error3] = useUpdateProfile(auth);
-
+  const [token]=useTokem(user||guser) 
+  console.log(user?.user);
       if(loading){
         return <Loader/>
     } 
     if(error){
-        console.log(error.message);
+        // console.log(error.message);
     }  
-    if(user  ){
+    if(token  ){
         // alert("user")
         navigate('/') 
-        console.log();
+        // console.log();
     }
 
     const subRegForm=async (e)=>{  
@@ -79,7 +86,7 @@ const Registration = () => {
               </div> 
               </form>
                <div class="form-control mt-6">
-                 <button class="btn text-black btn-outline flex justify-center px-8 ">
+                 <button class="btn text-black btn-outline flex justify-center px-8 " onClick={googleSignIn}>
                    <img src="https://upload.wikimedia.org/wikipedia/commons/archive/5/53/20210313114223%21Google_%22G%22_Logo.svg" alt="" width="30" />
                    <span className='ml-2'>Sign In With Google</span></button>
                </div>

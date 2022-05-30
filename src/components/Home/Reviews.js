@@ -20,7 +20,7 @@ const Reviews = () => {
             
           <div className='grid container mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center justify-center items-center'>
           {
-                products.slice(0, 6).map(review=><Review key={review._id} product={review} />)
+                products.map(review=><Review key={review._id} product={review} />)
             }
           </div>
         </div>

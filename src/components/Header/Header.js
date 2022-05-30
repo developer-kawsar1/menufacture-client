@@ -13,7 +13,9 @@ const Header = () => {
   }
   const signOutBtn=()=>{
    
-      signOut(auth);  
+      signOut(auth);   
+
+      localStorage.removeItem('accessToken')
       console.log("sign out succefully ");  
     
     

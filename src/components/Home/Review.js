@@ -6,7 +6,7 @@ const Review = ({product}) => {
   for(let i=0; i<ratting; i++){
     list.push(i+1)
   } 
-  console.log(list);
+  // console.log(list);
     return (
         <div class="review flex items-center flex-col py-5 p-2 rounded bg-white mb-8  ">
     

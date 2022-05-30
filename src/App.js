@@ -15,6 +15,7 @@ import AddaReview from "./components/Dashboard/AddaReview";
 import MyProfile from "./components/Dashboard/MyProfile";
 import NotFound from "./components/NotFound/NotFound";
 import MyPortfilio from "./components/MyPortfolio/MyPortfilio";
+import EditProfile from "./components/Dashboard/EditProfile";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           </Route>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/edit-profile/:id" element={<EditProfile />} />
         <Route path="/blog" element={<Blogs />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="*" element={<NotFound/>} />

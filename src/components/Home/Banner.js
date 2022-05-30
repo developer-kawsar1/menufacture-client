@@ -2,36 +2,16 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div class="carousel w-full">
-        <div id="slide1" class="carousel-item relative w-full">
-          <img src="https://api.lorem.space/image/car?w=800&h=500&hash=8B7BCDC2" class="w-full"/>  
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" class="btn btn-circle">❮</a> 
-            <a href="#slide2" class="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide2" class="carousel-item relative w-full">
-          <img src="https://api.lorem.space/image/car?w=800&h=500&hash=500B67FB" class="w-full" /> 
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" class="btn btn-circle">❮</a> 
-            <a href="#slide3" class="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide3" class="carousel-item relative w-full">
-          <img src="https://api.lorem.space/image/car?w=800&h=500&hash=A89D0DE6" class="w-full"/> 
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" class="btn btn-circle">❮</a> 
-            <a href="#slide4" class="btn btn-circle">❯</a>
-          </div>
-        </div> 
-        <div id="slide4" class="carousel-item relative w-full">
-          <img src="https://api.lorem.space/image/car?w=800&h=200&hash=225E6693" class="w-full"/> 
-          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" class="btn btn-circle">❮</a> 
-            <a href="#slide1" class="btn btn-circle">❯</a>
-          </div>
-        </div>
-      </div>
+      <div class="hero min-h-screen bg-base-200">
+  <div class="hero-content flex-col lg:flex-row">
+    <img src="https://api.lorem.space/image/movie?w=260&h=400" class="max-w-sm rounded-lg shadow-2xl" />
+    <div>
+      <h1 class="text-5xl font-bold">Box Office News!</h1>
+      <p class="py-6"> ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+</div>
     );
 };
 
