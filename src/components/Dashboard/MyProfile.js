@@ -60,8 +60,14 @@ const MyProfile = () => {
     
       <tr>
         
-      <td>Address</td>
+      <td>Location</td>
         <td> <i class="fa fa-map-marker" aria-hidden="true"></i> {myData[0]?.address || ''}</td>
+        
+      </tr>
+      <tr>
+        
+      <td>Linkdin profile</td>
+        <td> <i class="fa fa-linkedin" aria-hidden="true"></i> {myData[0]?.linkdin || ''}</td>
         
       </tr>
     </tbody>

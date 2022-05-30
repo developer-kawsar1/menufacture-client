@@ -22,7 +22,8 @@ const EditProfile = () => {
     const email = e.target.email.value; 
     const phone = e.target.phone.value; 
     const address= e.target.address.value; 
-    const currentUser={name,email,phone,address}
+    const linkdin= e.target.linkdin.value; 
+    const currentUser={name,email,phone,address,linkdin}
     // alert(id);  
     fetch(`https://vast-plateau-65170.herokuapp.com/user/${email}`, {
                 method:'PUT',
@@ -92,7 +93,7 @@ const EditProfile = () => {
 
                 <div class="form-control w-full">
                   <label class="label">
-                    <span class="label-text">Address</span>
+                    <span class="label-text">Location</span>
                   </label>
                   <input
                     type="text"
@@ -100,6 +101,18 @@ const EditProfile = () => {
                     name="address"
                     class="input input-bordered" 
                     defaultValue={editUser?.address || ""}
+                  />
+                </div>
+                <div class="form-control w-full">
+                  <label class="label">
+                    <span class="label-text">Location</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Linkedin"
+                    name="linkdin"
+                    class="input input-bordered" 
+                    defaultValue={editUser?.linkdin || ""}
                   />
                 </div>
                
