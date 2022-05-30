@@ -27,7 +27,7 @@ const Dashboard = () => {
   {
          nowAdmin[0]?.isAdmin? <> 
          
-          <li className='font-bold'><Link to="manage-order">Manage all orders </Link></li>  
+          {/* <li className='font-bold'><Link to="manage-order">Manage all orders </Link></li>   */}
           <li className='font-bold'><Link to="add-product">Add Products </Link></li>  
           
           
