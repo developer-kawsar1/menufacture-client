@@ -5,7 +5,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loader from '../Loader/Loader';
-import useTokem from '../../Hooks/useToken';
+// import useTokem from '../../Hooks/useToken';
 
 const Registration = () => {    
 
@@ -23,7 +23,7 @@ const Registration = () => {
       ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});  
       const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);  
       const [updateProfile, updating, error3] = useUpdateProfile(auth);
-  const [token]=useTokem(user||guser) 
+  // const [token]=useTokem(user||guser) 
   console.log(user?.user);
       if(loading){
         return <Loader/>
@@ -31,22 +31,23 @@ const Registration = () => {
     if(error){
         // console.log(error.message);
     }  
-    if(token  ){
-        // alert("user")
-        navigate('/') 
-        // console.log();
-    }
+ 
 
     const subRegForm=async (e)=>{  
         const email= e.target.email.value
-         const name=e.target.name.value 
+         const displayName=e.target.name.value 
         const password=e.target.password.value 
-       console.log(email,password,name);
+       console.log(email,password);
         e.preventDefault() 
         await   createUserWithEmailAndPassword(email,password) 
-        await updateProfile({ displayName:name }); 
+        await updateProfile({ displayName }); 
      
-    } 
+    }  
+    if(user || guser ){
+      // alert("user")
+      navigate('/') 
+      // console.log();
+  }
     return (
         <div class="px-0   bg-base-200 px-5 sm:px-48 py-8 ">
         <div class="">

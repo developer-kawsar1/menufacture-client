@@ -15,7 +15,7 @@ const EditProfile = () => {
         setEditUser(data);
         //    setCount(product.quantity)
       });
-  }, []);
+  }, {});
   const submitProfile = (e) => {
     e.preventDefault();
     const name = e.target.name.value;

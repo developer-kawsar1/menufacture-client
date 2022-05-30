@@ -3,11 +3,15 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useTokem from '../../Hooks/useToken';
 import Loader from '../Loader/Loader';
 
 const Header = () => {   
   // const [user]=useAuthState(auth) 
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading, error] = useAuthState(auth);  
+  // const [token]=useTokem(user||guser) 
+  console.log(user?.user);
+  console.log("user is a ",user?.user);
   if(loading){
     return<Loader/>
   }

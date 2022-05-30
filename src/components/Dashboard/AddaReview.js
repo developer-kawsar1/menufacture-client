@@ -30,7 +30,8 @@ const AddaReview = () => {
   return (
     <div className="flex items-center justify-center">
       <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-        <div class="card-body"> 
+        <div class="card-body">  
+        <h3 className="font-bold text-center text-orange-500">Add your review</h3>
         <form action="" onSubmit={SubmitReview}>
           <div class="form-control">
             <label class="label">
