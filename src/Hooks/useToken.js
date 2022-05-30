@@ -5,8 +5,9 @@ const useTokem=user=>{
     useEffect(()=>{ 
         const email=user?.user?.email 
         const name=user?.user?.displayName
-        const isAdmin=false
-        const currentUser={email:email,name:name,isAdmin} 
+        // const isAdmin=false
+        const currentUser={email:email,name:name}  
+        console.log("email is djdjjjjjjjjjj" ,email);
         if(email){
             fetch(`https://vast-plateau-65170.herokuapp.com/user/${email}`, {
                 method:'PUT',

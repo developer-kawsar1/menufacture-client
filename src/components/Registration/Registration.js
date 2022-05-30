@@ -6,13 +6,16 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loader from '../Loader/Loader';
 // import useTokem from '../../Hooks/useToken';
+import useTokem from '../../Hooks/useToken';
+// import useTokem from '../../Hooks/useToken';
 
 const Registration = () => {    
 
+  
   const googleSignIn=()=>{
     signInWithGoogle() 
-} 
-    const navigate=useNavigate() 
+}  
+    const navigate=useNavigate()  
     const location=useLocation()  
     const from=location.state?.from?.pathname || '/' 
     const [
@@ -22,8 +25,15 @@ const Registration = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true});  
       const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);  
-      const [updateProfile, updating, error3] = useUpdateProfile(auth);
-  // const [token]=useTokem(user||guser) 
+      const [updateProfile, updating, error3] = useUpdateProfile(auth); 
+      const [token]=useTokem(user,guser) 
+      if(token){
+        // alert("user") 
+        // toast("succefully loged");
+        navigate(from,{replace:true}) 
+    }
+
+  // const [token]=useTokem(user||guser)  
   console.log(user?.user);
       if(loading){
         return <Loader/>
@@ -31,7 +41,7 @@ const Registration = () => {
     if(error){
         // console.log(error.message);
     }  
- 
+   
 
     const subRegForm=async (e)=>{  
         const email= e.target.email.value
@@ -47,7 +57,9 @@ const Registration = () => {
       // alert("user")
       navigate('/') 
       // console.log();
-  }
+  } 
+  
+
     return (
         <div class="px-0   bg-base-200 px-5 sm:px-48 py-8 ">
         <div class="">
